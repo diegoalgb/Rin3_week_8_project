@@ -52,10 +52,5 @@ access_clean_fuel_gdp <- relocate(gdp_clean_fuels_by_year, id, .before = country
 write_rds(access_clean_fuel_gdp,
           file = "data/access_clean_fuel_gdp.rds")
 
-# Arguments:
-# data$text_column: The column containing the strings to be modified.
-# pattern = "x\\d+_yr": The pattern to remove. Here's a breakdown:
-# x: Matches the literal character "x".
-# \\d+: Matches one or more digits using the + quantifier.
-# _yr: Matches the literal characters "_yr".
+
 
