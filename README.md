@@ -68,4 +68,6 @@ write_rds(access_clean_fuel_gdp,
 
 ## Data viz
 
-The rds file was imported to a qmd document, filtered by year (2019) and 
+The rds file was imported to a qmd document, filtered by year (2019) and then The following graph was generated
+
+![](data-viz/clean_fuel_gdp.jpg)
