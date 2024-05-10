@@ -1,0 +1,42 @@
+---
+title: "Access to clean fuels for cooking vs GDP per capita 2019"
+author: "Diego Garcia"
+format: html
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+
+```{r}
+# Load packages
+library(tidyverse)
+library(janitor)
+library(scales)
+
+```
+
+```{r}
+clean_fuel_gdp <- read_rds("data/access_clean_fuel_gdp.rds")
+```
+
+```{r}
+clean_fuel_gdp |> 
+  filter(year == 2019) |> 
+  ggplot(aes(x = gdp, y = acfc)) +
+  geom_point() +
+  geom_text(aes(label = country_name), size = 2, vjust = 2) +
+  scale_x_log10(labels = scales::label_dollar()) +
+  scale_y_continuous(labels = scales::label_number(suffix = "%"))+
+  labs(
+    x = "GDP per capita",
+    y = "Access to clean fuels and technologies for cooking",
+    title = "Access to clean fuels for cooking vs GDP per capita, 2019",
+    caption = "Data source : World Bank"
+  )+
+  theme_minimal()
+  
+```
+
+
