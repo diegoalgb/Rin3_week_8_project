@@ -36,7 +36,9 @@ clean_fuel_gdp |>
     caption = "Data source : World Bank"
   )+
   theme_minimal()
-  
+
+ggsave("data-viz/clean_fuel_gdp.jpg")
+
 ```
 
 

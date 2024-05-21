@@ -10,6 +10,7 @@ library(fs)
 
 dir_create("data-raw")
 dir_create("data")
+dir_create("data-viz")
 
 # We are going to explore some data from the world bank, especially data from the world bank development indicators
 
