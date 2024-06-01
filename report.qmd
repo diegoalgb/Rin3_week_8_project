@@ -14,6 +14,7 @@ execute:
 library(tidyverse)
 library(janitor)
 library(scales)
+library(plotly)
 
 ```
 
@@ -22,6 +23,7 @@ clean_fuel_gdp <- read_rds("data/access_clean_fuel_gdp.rds")
 ```
 
 ```{r}
+#| label: clean fuel plot
 clean_fuel_gdp |> 
   filter(year == 2019) |> 
   ggplot(aes(x = gdp, y = acfc)) +
@@ -40,5 +42,7 @@ clean_fuel_gdp |>
 ggsave("data-viz/clean_fuel_gdp.jpg")
 
 ```
+```{r}
 
+```
 
