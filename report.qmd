@@ -43,6 +43,33 @@ ggsave("data-viz/clean_fuel_gdp.jpg")
 
 ```
 ```{r}
+#| label: Libby feedback
+#| warning: false
+#| echo: false
+
+plot <-
+  clean_fuel_gdp |> 
+  filter(year == 2019) |> 
+  ggplot(aes(
+    x = gdp,
+    y = acfc,
+    text = country_name
+  )) +
+  geom_point(alpha = .5) +
+  scale_x_log10(labels = scales::label_dollar()) +
+  scale_y_continuous(labels = scales::label_number(suffix = "%")) +
+  labs(
+    x = "GDP per capita",
+    y = "Access to clean fuels and technologies for cooking",
+    title = "Access to clean fuels for cooking vs GDP per capita, 2019",
+    caption = "Data source : World Bank"
+  ) +
+  theme_minimal()
+
+ggplotly(plot, tooltip = "text") |> 
+  config(displayModeBar = FALSE)
+```
+```{r}
 
 ```
 
