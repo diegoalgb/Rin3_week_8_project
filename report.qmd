@@ -69,7 +69,5 @@ plot <-
 ggplotly(plot, tooltip = "text") |> 
   config(displayModeBar = FALSE)
 ```
-```{r}
 
-```
 
